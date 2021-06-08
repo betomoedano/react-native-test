@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from "@react-navigation/native"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet} from 'react-native';
+import { StyleSheet,} from 'react-native';
 import Tabs from './navigation/tabs';
 
 

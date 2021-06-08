@@ -1,13 +1,6 @@
 import React from "react"
 import tailwind from 'tailwind-rn';
-import { 
-    StyleSheet, 
-    Text, 
-    View, 
-    Image, 
-    TouchableOpacity,
-    Button, 
-    Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
 export default function CryptoContainer(props) {
 

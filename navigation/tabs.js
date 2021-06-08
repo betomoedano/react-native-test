@@ -1,11 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import App from "../App";
 import Home from "../screens/Home";
 import Search from "../screens/Search";
 import Profile from "../screens/Profile";
-import { NavigationContainer } from "@react-navigation/native";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text,StyleSheet } from "react-native";
 
 
 const Tab = createBottomTabNavigator();
@@ -14,14 +12,17 @@ function Tabs() {
     return (
         <Tab.Navigator 
             tabBarOptions={{
-                showLabel:false
+                showLabel:false,
+                style: {
+                    backgroundColor: "#fafafa",
+                }
             }}
         >
             <Tab.Screen 
                 name="Home" 
                 component={Home}
                 options={{
-                    tabBarIcon:({focused}) => {
+                    tabBarIcon:({focused}) => (
                         <View style={{flex:1, alignItems:"center", justifyContent:"center", top: 10}}>
                             <Image 
                                 source={require("../assets/Icons/add_circle.png")}
@@ -29,15 +30,15 @@ function Tabs() {
                                 style={{
                                     width:25,
                                     height: 25,
-                                    tintColor: focused ? "#32f45" : "#0000"
+                                    tintColor: focused ? 'blue' : 'gray'
                                 }}
                             />
                             <Text 
-                                style={{color: focused ? "#32f45" : "#0000"}}>
+                                style={{color: focused ? 'blue' : 'gray'}}>
                                 Home
                             </Text>
                         </View>
-                    }
+                    ),
                 }}
             />
             <Tab.Screen name="Profile" component={Profile}/>
@@ -45,5 +46,9 @@ function Tabs() {
         </Tab.Navigator>
     );
 }
+
+const styles = StyleSheet.create({
+
+});
 export default Tabs;
 
