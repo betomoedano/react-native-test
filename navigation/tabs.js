@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from "../screens/Home";
 import Search from "../screens/Search";
 import Profile from "../screens/Profile";
+import Chat from "../screens/Chat";
 import { View, Image, Text,StyleSheet } from "react-native";
 
 
@@ -25,7 +26,7 @@ function Tabs() {
                     tabBarIcon:({focused}) => (
                         <View style={{flex:1, alignItems:"center", justifyContent:"center", top: 10}}>
                             <Image 
-                                source={require("../assets/Icons/add_circle.png")}
+                                source={require("../assets/Icons/fluent_home-24-regular.png")}
                                 resizeMode="contain"
                                 style={{
                                     width:25,
@@ -41,8 +42,75 @@ function Tabs() {
                     ),
                 }}
             />
-            <Tab.Screen name="Profile" component={Profile}/>
-            <Tab.Screen name="Search" component={Search}/>
+            <Tab.Screen 
+                name="Chat" 
+                component={Chat}
+                options={{
+                    tabBarIcon:({focused}) => (
+                        <View style={{flex:1, alignItems:"center", justifyContent:"center", top: 10}}>
+                            <Image 
+                                source={require("../assets/Icons/chat_bubble_outline.png")}
+                                resizeMode="contain"
+                                style={{
+                                    width:25,
+                                    height: 25,
+                                    tintColor: focused ? 'blue' : 'gray'
+                                }}
+                            />
+                            <Text 
+                                style={{color: focused ? 'blue' : 'gray'}}>
+                                Chat
+                            </Text>
+                        </View>
+                    ),
+                }}
+            />
+            <Tab.Screen 
+                name="Profile" 
+                component={Profile}
+                options={{
+                    tabBarIcon:({focused}) => (
+                        <View style={{flex:1, alignItems:"center", justifyContent:"center", top: 10}}>
+                            <Image 
+                                source={require("../assets/Icons/account_circle.png")}
+                                resizeMode="contain"
+                                style={{
+                                    width:25,
+                                    height: 25,
+                                    tintColor: focused ? 'blue' : 'gray'
+                                }}
+                            />
+                            <Text 
+                                style={{color: focused ? 'blue' : 'gray'}}>
+                                Profile
+                            </Text>
+                        </View>
+                    ),
+                }}
+            />
+            <Tab.Screen 
+                name="Search" 
+                component={Search}
+                options={{
+                    tabBarIcon:({focused}) => (
+                        <View style={{flex:1, alignItems:"center", justifyContent:"center", top: 10}}>
+                            <Image 
+                                source={require("../assets/Icons/settings.png")}
+                                resizeMode="contain"
+                                style={{
+                                    width:25,
+                                    height: 25,
+                                    tintColor: focused ? 'blue' : 'gray'
+                                }}
+                            />
+                            <Text 
+                                style={{color: focused ? 'blue' : 'gray'}}>
+                                Settings
+                            </Text>
+                        </View>
+                    ),
+                }}
+            />
         </Tab.Navigator>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import tailwind from 'tailwind-rn';
-import CryptoContainer from "../CryptoContainer";
+import CryptoContainer from "../Components/CryptoContainer";
 import { StatusBar } from 'expo-status-bar';
 import { 
     StyleSheet, 
